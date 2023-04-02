@@ -1,0 +1,133 @@
+{
+  "publisher": "skyer",
+  "name": "vscode-fakerjs",
+  "displayName": "Vscode fakerjs",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@7.8.0",
+  "description": "",
+  "author": "Skyer <yang.skyer@gmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/skyer",
+  "homepage": "https://github.com/skyer/vscode-fakerjs#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skyer/vscode-fakerjs"
+  },
+  "bugs": {
+    "url": "https://github.com/skyer/vscode-fakerjs/issues"
+  },
+  "sponsor": {
+    "url": "https://github.com/sponsors/skyer"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/index.js",
+  "icon": "res/icon.png",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "activationEvents": [
+    "onCommand:vscode-fakerjs.generate"
+  ],
+  "contributes": {
+    "commands":[
+      {
+        "category": "Vscode Fakerjs",
+        "command": "vscode-fakerjs.generate",
+        "title": "Generate ..."
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Fakerjs Configuration",
+      "properties": {
+        "vscode-fakerjs.locale": {
+          "type": "string",
+          "default": "zh_CN",
+          "enum": [
+            "az",
+            "ar",
+            "cz",
+            "de",
+            "de_AT",
+            "de_CH",
+            "en",
+            "en_AU",
+            "en_AU_ocker",
+            "en_BORK",
+            "en_CA",
+            "en_GB",
+            "en_IE",
+            "en_IND",
+            "en_US",
+            "en_ZA",
+            "es",
+            "es_MX",
+            "fa",
+            "fi",
+            "fr",
+            "fr_CA",
+            "fr_CH",
+            "ge",
+            "id_ID",
+            "it",
+            "ja",
+            "ko",
+            "nb_NO",
+            "ne",
+            "nl",
+            "nl_BE",
+            "pl",
+            "pt_BR",
+            "pt_PT",
+            "ro",
+            "ru",
+            "sk",
+            "sv",
+            "tr",
+            "uk",
+            "vi",
+            "zh_CN",
+            "zh_TW"
+          ],
+          "description": "Set locale for Fakerjs"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --external vscode",
+    "dev": "nr build --watch",
+    "lint": "eslint .",
+    "vscode:prepublish": "nr build",
+    "publish": "vsce publish --no-dependencies",
+    "pack": "vsce package --no-dependencies",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp && nr publish"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.25.2",
+    "@antfu/ni": "^0.17.2",
+    "@types/node": "^18.6.4",
+    "@types/vscode": "^1.69.0",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.21.0",
+    "esno": "^0.16.3",
+    "pnpm": "^7.8.0",
+    "rimraf": "^3.0.2",
+    "tsup": "^6.2.1",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.4",
+    "vitest": "^0.21.0",
+    "vsce": "^2.10.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0"
+  }
+}
