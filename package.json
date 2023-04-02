@@ -32,14 +32,20 @@
     "vscode": "^1.69.0"
   },
   "activationEvents": [
+    "onCommand:vscode-fakerjs.insert",
     "onCommand:vscode-fakerjs.generate"
   ],
   "contributes": {
     "commands":[
       {
         "category": "Vscode Fakerjs",
+        "command": "vscode-fakerjs.insert",
+        "title": "Insert faker data ..."
+      },
+      {
+        "category": "Vscode Fakerjs",
         "command": "vscode-fakerjs.generate",
-        "title": "Generate ..."
+        "title": "Generate faker data ..."
       }
     ],
     "configuration": {

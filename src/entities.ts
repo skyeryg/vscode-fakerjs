@@ -6,7 +6,7 @@ interface Method {
 interface ModuleMethods {
   [methodName: string]: Method
 }
-interface Modules {
+export interface Modules {
   [moduleName: string]: ModuleMethods
 }
 
